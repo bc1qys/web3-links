@@ -185,55 +185,28 @@ export default function Home() {
         </div>
 
         <footer className="donation-section">
-          <div className="donation-content">
-            <h2 className="donation-title">Support This Project</h2>
-            <p className="donation-subtitle">
-              Thank you for using this dashboard! If you find it helpful, consider supporting the project with a
-              donation.
-            </p>
-
-            <div className="wallet-addresses">
-              <div
-                className="wallet-card"
-                onClick={() => copyToClipboard("bc1qys3654z5qxaxsestykx78jfpwzeut6q4jq0j88", "Bitcoin")}
-              >
-                <div className="wallet-header">
-                  <img src="/bitcoin-logo.png" alt="Bitcoin" className="chain-logo" />
-                  <span className="chain-name">Bitcoin</span>
-                </div>
-                <div className="wallet-address">
-                  <code>bc1qys3654z5qxaxsestykx78jfpwzeut6q4jq0j88</code>
-                  <i className="fas fa-copy copy-icon"></i>
-                </div>
-              </div>
-
-              <div
-                className="wallet-card"
-                onClick={() => copyToClipboard("0x6a5390FeFe51b3c102a65E80C570ac67a6b7ABbd", "EVM")}
-              >
-                <div className="wallet-header">
-                  <img src="/ethereum-logo.png" alt="Ethereum" className="chain-logo" />
-                  <span className="chain-name">EVM (Ethereum, Polygon, etc.)</span>
-                </div>
-                <div className="wallet-address">
-                  <code>0x6a5390FeFe51b3c102a65E80C570ac67a6b7ABbd</code>
-                  <i className="fas fa-copy copy-icon"></i>
-                </div>
-              </div>
-
-              <div
-                className="wallet-card"
-                onClick={() => copyToClipboard("AacPVJ1XH9XXNzsLQRjCi5rN5hxZvXfSzT1HYAf3HpbH", "Solana")}
-              >
-                <div className="wallet-header">
-                  <img src="/solana-logo.png" alt="Solana" className="chain-logo" />
-                  <span className="chain-name">Solana</span>
-                </div>
-                <div className="wallet-address">
-                  <code>AacPVJ1XH9XXNzsLQRjCi5rN5hxZvXfSzT1HYAf3HpbH</code>
-                  <i className="fas fa-copy copy-icon"></i>
-                </div>
-              </div>
+          <p className="donation-text">Thank you for using this dashboard! Support the project:</p>
+          <div className="wallet-list">
+            <div
+              className="wallet-item"
+              onClick={() => copyToClipboard("bc1qys3654z5qxaxsestykx78jfpwzeut6q4jq0j88", "Bitcoin")}
+            >
+              <span className="wallet-label">BTC:</span>
+              <code className="wallet-address">bc1qys3654z5qxaxsestykx78jfpwzeut6q4jq0j88</code>
+            </div>
+            <div
+              className="wallet-item"
+              onClick={() => copyToClipboard("0x6a5390FeFe51b3c102a65E80C570ac67a6b7ABbd", "EVM")}
+            >
+              <span className="wallet-label">EVM:</span>
+              <code className="wallet-address">0x6a5390FeFe51b3c102a65E80C570ac67a6b7ABbd</code>
+            </div>
+            <div
+              className="wallet-item"
+              onClick={() => copyToClipboard("AacPVJ1XH9XXNzsLQRjCi5rN5hxZvXfSzT1HYAf3HpbH", "Solana")}
+            >
+              <span className="wallet-label">SOL:</span>
+              <code className="wallet-address">AacPVJ1XH9XXNzsLQRjCi5rN5hxZvXfSzT1HYAf3HpbH</code>
             </div>
           </div>
         </footer>
