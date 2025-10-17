@@ -100,9 +100,9 @@ export default function Home() {
         <header>
           <div className="logo-section">
             <div className="logo-icon">
-              <i className="fas fa-cube"></i>
+              <i className="fas fa-link"></i>
             </div>
-            <h1>LaJota web3 links dashboard</h1>
+            <h1>LaJota's Latest Alphas</h1>
           </div>
           <p className="subtitle">Discovering the latest web3 projects.</p>
         </header>
