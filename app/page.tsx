@@ -185,7 +185,7 @@ export default function Home() {
         </div>
 
         <footer className="donation-section">
-          <p className="donation-text">Thank you for using this dashboard! Support the project:</p>
+          <p className="donation-text">Thank you for using this dashboard ! If you want support the project:</p>
           <div className="wallet-list">
             <div
               className="wallet-item"
