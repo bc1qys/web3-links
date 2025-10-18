@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 
 const TAGS = [
   "DeFi",
+  "DEX",
   "Perps",
   "L1",
   "L2",
