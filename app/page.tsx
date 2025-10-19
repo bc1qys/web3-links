@@ -87,6 +87,14 @@ export default function Home() {
     return matchesSearch && matchesTags
   })
 
+  const stats = {
+    total: projects.length,
+    byCategory: TAGS.map((tag) => ({
+      tag,
+      count: projects.filter((p) => p.tags.includes(tag)).length,
+    })).filter((stat) => stat.count > 0),
+  }
+
   const copyToClipboard = (address: string, chain: string) => {
     navigator.clipboard.writeText(address)
     showToast(`${chain} address copied!`)
@@ -107,6 +115,52 @@ export default function Home() {
           </div>
           <p className="subtitle">Discovering the latest web3 projects.</p>
         </header>
+
+        <div className="stats-section">
+          <div className="stat-card stat-card-primary">
+            <div className="stat-icon">
+              <i className="fas fa-rocket"></i>
+            </div>
+            <div className="stat-content">
+              <div className="stat-value">{stats.total}</div>
+              <div className="stat-label">Total Projects</div>
+            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon">
+              <i className="fas fa-tags"></i>
+            </div>
+            <div className="stat-content">
+              <div className="stat-value">{stats.byCategory.length}</div>
+              <div className="stat-label">Active Categories</div>
+            </div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-icon">
+              <i className="fas fa-filter"></i>
+            </div>
+            <div className="stat-content">
+              <div className="stat-value">{filteredProjects.length}</div>
+              <div className="stat-label">Filtered Results</div>
+            </div>
+          </div>
+        </div>
+
+        {stats.byCategory.length > 0 && (
+          <div className="category-stats">
+            <h3 className="category-stats-title">
+              <i className="fas fa-chart-bar"></i> Projects by Category
+            </h3>
+            <div className="category-grid">
+              {stats.byCategory.map(({ tag, count }) => (
+                <div key={tag} className="category-stat-item">
+                  <span className="category-stat-tag">{tag}</span>
+                  <span className="category-stat-count">{count}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="controls">
           <div className="search-box">
