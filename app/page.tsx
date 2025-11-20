@@ -24,6 +24,7 @@ const TAGS = [
   "Bridge",
   "Privacy",
   "Lending",
+  "Bitcoin",
 ]
 
 interface Project {
